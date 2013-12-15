@@ -1,0 +1,35 @@
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+.opaq {
+    opacity: 0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    padding: 0 15px 0 0;
+}
+
+.opaq:hover {
+    opacity: 1;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+tr.clickableRow { 
+    cursor: pointer; 
+}
+
+/* facebook comments */
+.fb-comments, 
+.fb-comments iframe[style], 
+.fb-like-box, 
+.fb-like-box iframe[style] {
+    width: 100% !important;
+}
+
+.fb-comments span, 
+.fb-comments iframe span[style], 
+.fb-like-box span, 
+.fb-like-box iframe span[style] {
+    width: 100% !important;
+}
