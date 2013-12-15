@@ -9,6 +9,7 @@
     <meta name="author" content="Láthatatlan Egyetem">
     <link rel="shortcut icon" href="img/favicon.ico">
 
+    <!-- openGraph / fb -->
     <meta property="og:image" content="http://2014.lathatatlanegyetem.hu/img/zen.png"/>
     <meta property="og:title" content="Évrendező munkafüzet 2014"/>
     <meta property="og:url" content="http://2014.lathatatlanegyetem.hu"/>
@@ -19,6 +20,7 @@
 
     <title>Előtted az év</title>
 
+    <!-- CSS and FontAwesome-->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -29,7 +31,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
+
   <body>
+    <!-- facebook init -->
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -38,16 +42,23 @@
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=229235697200737";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-
+    <!-- /facebook init-->
+    
+    <!-- hero unit-->
     <div class="container">
       <div class="row">
         <div class="jumbotron col-md-8 col-md-offset-2">
           <h1>Előtted az év</h1>
           <p class="lead">Az évrendező munkafüzet abban segít Téged, hogy lezárhasd a mögötted álló, és nyugodtan megtervezhesd a következő évedet.</p>
-        </div>
-      </div>
+        </div> <!-- /jumbotron-->
+      </div> <!-- /row-->
+      <!-- /hero unit-->
+
+      <!-- content on desktop-->
       <div class="row hidden-xs">
         <div class="col-md-8 col-md-offset-2">
+
+          <!-- main download table -->
           <table class="table table-bordered table-hover table-responsive">
             <tbody>
               <tr id="downloadTable" class="clickableRow" href="http://2014.lathatatlanegyetem.hu/files/2014_evrendezo_munkafuzet.pdf">
@@ -75,71 +86,155 @@
                 </td>
               </tr> 
             </tbody>
-          </table>
-          <div class="fb-like" data-href="http://2014.lathatatlanegyetem.hu" data-layout="standard" data-action="like" data-show-faces="true" data-share="true">
-          </div>
+          </table> <!-- /table-->
+          <div id="message"></div> <!-- /#message-->
+          <!-- /main download table -->
 
-          <a href="#downloadTable" class="btn btn-block" data-toggle="collapse" data-target="#comments">
-            <i class="fa fa-comments"> </i>
-            Mondd el, mit gondolsz.
-          </a>
+          <!-- facebook like box -->
+          <div class="row">
+            <div class="col-md-12">
+            <div class="fb-like" data-href="http://2014.lathatatlanegyetem.hu" data-layout="standard" data-action="like" data-show-faces="true" data-share="true">
+            </div> <!-- /fb-like -->
+            </div> <!-- /col-md-12 -->
+          </div> <!-- /row -->
+          <!-- /facebook like box -->
+
+          <!-- engage buttons -->
+          <div class="row">
+            <div class="col-md-6">
+              <a href="#downloadTable" class="btn btn-block" data-toggle="collapse" data-target="#comments">
+              <i class="fa fa-comments"> </i>
+              szólj hozzá
+              </a>
+            </div> <!-- /col-md-6 -->
+            <div class="col-md-6">
+              <a id="thanks" class="btn btn-block" data-toggle="modal" data-target="#contactForm" href="#contactForm">
+              küldd el a fejlesztési javaslatodat
+              <i class="fa fa-envelope"> </i>
+              </a>
+            </div> <!-- /col-md-6 -->
+          </div> <!-- /row -->
+          <!-- /engage buttons -->
+
+          <!-- facebook comments collapsible-->
+          <div class="row">
             <div class="collapse" id="comments">
               <div class="fb-comments" data-href="http://2014.lathatatlanegyetem.hu" data-numposts="5" data-colorscheme="light"></div>
-            </div>
-        </div>
-      </div>
+            </div> <!-- /fb-comments -->
+          </div> <!-- /row -->
+          <!-- /facebook comments collapsible -->           
+
+          <!-- modal contact form -->
+          <div class="modal fade" id="contactForm" tabindex="-1" role="dialog" aria-labelledby="contact form" aria-hidden="true">>
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Küldd el a fejlesztési javaslatod!</h4>
+                </div> <!-- /modal-header -->
+                <div class="modal-body">
+                  <form class="contact" name="contact" id="contact" role="form">
+                    <div class="row">
+                    <div class="col-xs-6 col-md-6 form-group">
+                    <input class="form-control" id="name" name="name" placeholder="Név" type="text" required autofocus />
+                    </div>
+                    <div class="col-xs-6 col-md-6 form-group">
+                    <input class="form-control" id="email" name="email" placeholder="E-mail" type="email" required />
+                    </div>
+                    </div>
+                    <textarea class="form-control" id="message" name="message" placeholder="A fejlesztési javaslatom" rows="5"></textarea>
+                    <br />
+                  </form>
+                </div> <!-- /modal-body -->
+                <div class="modal-footer">
+                  <button class="btn btn-success" type="submit" id="submit" >
+                    <i class="fa fa-envelope"></i> 
+                    Elküldöm
+                  </button>
+                  <p class="text-muted">
+                    <small>(várj egy pár másodpercet)</small>
+                  </p>
+                </div> <!-- /modal-footer-->
+              </div><!-- /modal-content -->
+            </div><!-- /modal-dialog -->
+          </div><!-- /modal -->
+          <!-- /modal contact form -->
+
+        </div> <!-- col-md-8 col-md-offset-2 -->
+      </div> <!-- /row hidden-xs -->
+      <!-- /content on desktop -->
+
+      <!-- content on mobile -->
       <div class="row visible-xs">
         <div class="col-xs-10 col-xs-offset-1 well">
           <h3>Helyes kis füzetke. <small>(A/4-es lapra nyomtatható)</small></h3>
           <p>Ha nem tud a nyomtatód automatikusan mindkét oldalra nyomtatni, először a páratlan oldalakat nyomtasd, fordítsd meg a lapokat, és a párosokkal fejezd be.</p>
           <a href="files/2014_evrendezo_munkafuzet.pdf" class="btn btn-block btn-success"><i class="fa fa-download"> </i> Letöltés</a>
-        </div>
-      </div>
+        </div> <!-- /col-xs-10 --> 
+      </div> <!-- /row -->
       <div class="row visible-xs">
         <div class="col-xs-10 col-xs-offset-1 well">
           <h3>Normál formátum. <small>(A/4-es lapra nyomtatható)</small></h3>
           <p>Akkor válaszd ezt, ha a Te nyomtatód sokkal egyszerűbben is tud füzet-formátumot nyomtatni. Vagy ha egyszerűen nem akarsz bajlódni a hajtogatással.</p>
           <a href="files/2014_evrendezo_munkafuzet_A4.pdf" class="btn btn-block btn-success"><i class="fa fa-download"> </i> Letöltés</a>
-        </div>
-      </div>
+        </div> <!-- /col-xs-10 -->
+      </div> <!-- /row -->
       <div class="row visible-xs">
         <div class="col-xs-10 col-xs-offset-1">
           <div class="fb-like" data-href="http://2014.lathatatlanegyetem.hu" data-layout="standard" data-action="like" data-show-faces="true" data-share="true">
-          </div>
+          </div> <!-- /col-xs-10 -->
         </div>
-      </div>
+      </div> <!-- /row -->
+      <!-- /content on mobile-->
       
       <hr>
+
+      <!-- about AND donation -->
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h2>Miért jó ez nekem?</h2>
             <p class="lead">
               Az évrendezés egy jó szokás. Segítségével tudatosíthatod magadban sikereidet, bánataidat, és rácsodálkozhatsz, mennyi minden történhet egy év alatt. A múltadból tanulva tervezheted meg a jövődet, hogy ne ess időről-időre ugyanazokba a csapdákba, és a kezedben tudhasd saját életed irányítását.
             </p>
+            
             <hr>
+            
             <p class="text-center">
               Készítették a Láthatatlan Egyetem önkéntesei.
             </p>
+            
+            <!-- logo -->
             <div class="text-center">
               <p>
-                <a href="http://lathatatlanegyetem.hu" title="Láthatatlan Egyetem"><img src="img/puli.png" width="100px" alt="A Láthatatlan Egyetem egy felsőoktatási hallgatókból és fiatal felnőttekből álló nemzetközi szervezet. Jövőképe, hogy a világ összes felsőoktatási intézményében legyen egy-egy önkéntesekből álló társaság, aki a többieknek életvezetési ismeretek elsajátítását segítő programokat szervez."></a>
+                <a href="http://lathatatlanegyetem.hu" title="Láthatatlan Egyetem">
+                  <img src="img/puli.png" width="100px" alt="A Láthatatlan Egyetem egy felsőoktatási hallgatókból és fiatal felnőttekből álló nemzetközi szervezet. Jövőképe, hogy a világ összes felsőoktatási intézményében legyen egy-egy önkéntesekből álló társaság, aki a többieknek életvezetési ismeretek elsajátítását segítő programokat szervez.">
+                </a>
               </p> 
             </div>
+            <!-- /logo -->
+            
             <hr>
+
+            <!-- creative commons AND paypal donate button -->
             <div class="text-center">
               <p>
                 <img class="opaq" src="img/cc.png" alt="Nevezd meg!-Ne add el!-Így add tovább!" title="Nevezd meg!-Ne add el!-Így add tovább!">
               </p>
+              
               <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="WQMCKWQ3C7238">
-              <input type="image" class="opaq" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="WQMCKWQ3C7238">
+                <input type="image" class="opaq" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
               </form> 
             </div>
-          </div>
-      </div>
-    </div>
+            <!-- /creative commons AND paypal donate button-->
+
+          </div> <!-- /col-md-8 col-md-offset-2 -->
+      </div> <!-- /row -->
+      <!-- /about AND donation -->
+
+    </div> <!-- /container -->
     
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -157,6 +252,24 @@
             $(".clickableRow").click(function() {
                   window.document.location = $(this).attr("href");
             });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+          $("#submit").click(function(){
+              $.ajax({
+                  type: "POST",
+                  url: "process.php", //process to mail
+                  data: $('form.contact').serialize(),
+                  success: function(msg){
+                      $("#message").html(msg) //show thank you
+                      $("#contactForm").modal('hide'); //hide modal
+                  },
+                  error: function(){
+                      alert("Valami nem stimmel, próbáld újra.");
+                  }
+              });
+          });
       });
     </script>
     
