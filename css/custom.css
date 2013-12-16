@@ -7,7 +7,6 @@
 .opaq {
     opacity: 0.4;
     filter:alpha(opacity=40); /* For IE8 and earlier */
-    padding: 0 15px 0 0;
 }
 
 .opaq:hover {
@@ -17,6 +16,16 @@
 
 tr.clickableRow { 
     cursor: pointer; 
+}
+
+form {
+  display: inline;
+  padding: 0 0 10px 15px;  
+}
+
+#license {
+  max-height: 23px;
+  margin: -10px 15px 0 30px;
 }
 
 /* facebook comments */
