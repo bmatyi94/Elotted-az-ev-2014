@@ -94,7 +94,6 @@
               </tr> 
             </tbody>
           </table> <!-- /table-->
-          <div id="message"></div> <!-- /#message-->
           <!-- /main download table -->
 
           <!-- facebook like box -->
@@ -267,6 +266,7 @@
     
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/growl.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -291,7 +291,10 @@
                   url: "process.php", //process to mail
                   data: $('form.contact').serialize(),
                   success: function(msg){
-                      $("#message").html(msg) //show thank you
+                      $.bootstrapGrowl(msg, {
+                        type: 'success',
+                        offset: {from: 'bottom', amount: 20},
+                      });
                       $("#contactForm").modal('hide'); //hide modal
                   },
                   error: function(){
