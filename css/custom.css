@@ -20,12 +20,12 @@ tr.clickableRow {
 
 form {
   display: inline;
-  padding: 0 0 10px 15px;  
+  padding: 0 10px 10px 10px;  
 }
 
 #license {
   max-height: 23px;
-  margin: -10px 15px 0 30px;
+  margin: -10px 15px 0 20px;
 }
 
 /* facebook comments */
