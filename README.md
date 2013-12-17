@@ -6,9 +6,9 @@ functions
 --------------
 - clickable rows via jQuery
 - modal contact form
-- collapsible facebook comments
-- different, optimized content for desktop and mobile
+- differently optimized content for desktop and mobile
 - php mail for contact form
+- growl-like notifications 
 
 based on
 --------------
@@ -17,6 +17,6 @@ based on
 integrations
 --------------
 - fb-like 
--fb-comment 
+- fb-comment 
 - paypal-donate 
 - google analytics
