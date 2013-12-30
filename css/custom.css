@@ -28,6 +28,11 @@ form {
   margin: -10px 15px 0 20px;
 }
 
+#flag {
+  float: right;
+  margin: 15px;
+}
+
 /* facebook comments */
 .fb-comments, 
 .fb-comments iframe[style], 
